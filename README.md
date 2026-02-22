@@ -1,6 +1,8 @@
 📘 README — Deploying the CodeKloud E-Commerce App on Ubuntu (WSL)
+📘 README — Deploying the CodeKerdos E-Commerce App on Ubuntu (WSL)
 
 This document provides step-by-step instructions to deploy the CodeKloud E-Commerce Application on Ubuntu (WSL or regular Ubuntu Server).
+This document provides step-by-step instructions to deploy the CodeKerdos E-Commerce Application on Ubuntu (WSL or regular Ubuntu Server).
 This version is adapted from the original CentOS guide.
 
 🟩 1. Update System
@@ -31,16 +33,19 @@ GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost';
 FLUSH PRIVILEGES;
 
 🟩 3. Load Initial Product Data
+🟩 3. Load Initial Course Data
 
 Create the SQL file:
 
 cat > db-load-script.sql << 'EOF'
 USE ecomdb;
 CREATE TABLE products (
+CREATE TABLE courses (
     id mediumint(8) unsigned NOT NULL auto_increment,
     Name varchar(255) default NULL,
     Price varchar(255) default NULL,
     ImageUrl varchar(255) default NULL,
+    imageURL varchar(255) default NULL,
     PRIMARY KEY (id)
 ) AUTO_INCREMENT=1;
 
@@ -53,6 +58,11 @@ INSERT INTO products (Name,Price,ImageUrl) VALUES
 ("Phone Covers","20","c-7.png"),
 ("Phone","80","c-8.png"),
 ("Laptop","150","c-4.png");
+INSERT INTO courses (Name, Price, imageURL) VALUES
+("Dev Ops", "89,999", "c-1.png"),
+("System Design", "79999", "c-2.png"),
+("DSA & System Design", "80000", "c-3.png"),
+("Agentic AI", "90000", "c-5.png");
 EOF
 
 
@@ -119,3 +129,4 @@ http://localhost
 
 
 You should now see the product list loading from MariaDB.
+You should now see the course list loading from MariaDB.

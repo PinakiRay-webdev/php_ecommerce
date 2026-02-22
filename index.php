@@ -85,11 +85,10 @@ loadEnv(__DIR__ . '/.env');
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <div class="col-md-9 p0">
                             <ul class="nav navbar-nav main_nav">
-                              <li><a href="#">Laptops</a></li>
-                              <li><a href="#">Drones</a></li>
-                                <li><a href="#">Gadgets</a></li>
-                                <li><a href="#">Phones</a></li>
-                                <li><a href="#">VR</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#product-list">Courses</a></li>
+                                <li><a href="#">Mentorship</a></li>
+                                <li><a href="#">Blog</a></li>
                                 <li><a href="#">Contact us</a></li>
                             </ul>
                         </div>
